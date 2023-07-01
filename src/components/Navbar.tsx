@@ -2,7 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeSwitch from "./ui/ThemeSwitch";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { logout } from "../utilities/authentication";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { userContext } from "../contexts/UserProvider";
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -10,6 +12,7 @@ const Navbar = () => {
         logout();
         navigate("/app");
     };
+    const userHolder = useContext(userContext);
 
     return (
         <>
@@ -19,13 +22,9 @@ const Navbar = () => {
                     aria-label="Global"
                 >
                     <div className="mr-5 lg:mr-0 lg:hidden">
-                        <a
-                            className="flex-none text-xl font-semibold dark:text-white"
-                            href="#"
-                            aria-label="Brand"
-                        >
+                        <Link to={"#"} className="flex-none text-xl font-semibold dark:text-white">
                             Brand
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="w-full flex items-center justify-end ml-auto sm:justify-between sm:gap-x-3 sm:order-3">
@@ -112,10 +111,10 @@ const Navbar = () => {
                                 >
                                     <div className="py-3 px-5 -m-2 bg-gray-100 rounded-t-lg dark:bg-gray-700">
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            Signed in as
+                                            Connecté avec cin
                                         </p>
                                         <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                                            james@site.com
+                                            {userHolder.cin}
                                         </p>
                                     </div>
                                     <div className="mt-2 py-2 first:pt-0 last:pb-0">

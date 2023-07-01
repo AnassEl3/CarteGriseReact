@@ -8,6 +8,7 @@ import { JWTType } from "../../types/authentication";
 import { userContext } from "../../contexts/UserProvider";
 import SpinnerScreen from "../../components/ui/SpinnerScreen";
 import { toast } from "react-toastify";
+import logo from '../../assets/gestion de carte grisse.svg'
 
 const Login = () => {
     const [loading, setLoading] = useState(false);
@@ -75,11 +76,12 @@ const Login = () => {
 
     return (
         <>
-            <main className="w-full max-w-md mx-auto p-6">
+            <main className="flex justify-center items-center w-full h-screen max-w-md mx-auto p-6" >
                 <div className="relative overflow-hidden mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
                     {loading ? <SpinnerScreen /> : null}
                     <div className="p-4 sm:p-7">
                         <div className="text-center">
+                            <img className="w-32 m-auto" src={logo} alt="Logo gestion carte grise" />
                             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
                                 S'identifier
                             </h1>

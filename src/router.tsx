@@ -11,6 +11,22 @@ import ListeVehicules from "./pages/vehicules/ListeVehicules";
 import ListeCartegrises from "./pages/cartegrises/ListeCartegrises";
 import TableauBord from "./pages/tableauBord/TableauBord";
 import Login from "./pages/auth/Login";
+import InfoGeneraleEdit from "./pages/infoGenerale/InfoGeneraleEdit";
+import AddEmploye from "./pages/employes/AddEmploye";
+import EditEmploye from "./pages/employes/EditEmploye";
+import ViewEmploye from "./pages/employes/ViewEmploye";
+import AddCitoyen from "./pages/citoyens/AddCitoyen";
+import ViewCitoyen from "./pages/citoyens/ViewCitoyen";
+import EditCitoyen from "./pages/citoyens/EditCitoyen";
+import AddVehicule from "./pages/vehicules/AddVehicule";
+import ViewVehicule from "./pages/vehicules/ViewVehicule";
+import EditVehicule from "./pages/vehicules/EditVehicule";
+import AddCartegrise from "./pages/cartegrises/AddCartegrise";
+import ViewCartegrise from "./pages/cartegrises/ViewCartegrise";
+import EditCartegrise from "./pages/cartegrises/EditCartegrise";
+import AddDemande from "./pages/demandes/AddDemande";
+import ViewDemande from "./pages/demandes/ViewDemande";
+import EditDemande from "./pages/demandes/EditDemande";
 
 const router = createBrowserRouter([
     {
@@ -40,11 +56,37 @@ const router = createBrowserRouter([
             },
             {
                 path: "administration",
-                element: <InfoGenerale />,
+                children: [
+                    {
+                        path: "",
+                        element: <InfoGenerale />,
+                    },
+                    {
+                        path: "edit",
+                        element: <InfoGeneraleEdit />,
+                    },
+                ]
             },
             {
                 path: "employes",
-                element: <ListeEmployes />,
+                children: [
+                    {
+                        path: "",
+                        element: <ListeEmployes />,
+                    },
+                    {
+                        path: "add",
+                        element: <AddEmploye />,
+                    },
+                    {
+                        path: ":id",
+                        element: <ViewEmploye />,
+                    },
+                    {
+                        path: ":id/edit",
+                        element: <EditEmploye />,
+                    },
+                ]
             },
             {
                 path: "formulaires",
@@ -52,7 +94,24 @@ const router = createBrowserRouter([
             },
             {
                 path: "demandes",
-                element: <ListeDemandes />,
+                children: [
+                    {
+                        path: "",
+                        element: <ListeDemandes />,
+                    },
+                    {
+                        path: "add",
+                        element: <AddDemande />,
+                    },
+                    {
+                        path: ":id",
+                        element: <ViewDemande />,
+                    },
+                    {
+                        path: ":id/edit",
+                        element: <EditDemande />,
+                    },
+                ]
             },
             {
                 path: "documents",
@@ -60,15 +119,66 @@ const router = createBrowserRouter([
             },
             {
                 path: "citoyens",
-                element: <ListeCitoyens />,
+                children: [
+                    {
+                        path: "",
+                        element: <ListeCitoyens />,
+                    },
+                    {
+                        path: "add",
+                        element: <AddCitoyen />,
+                    },
+                    {
+                        path: ":id",
+                        element: <ViewCitoyen />,
+                    },
+                    {
+                        path: ":id/edit",
+                        element: <EditCitoyen />,
+                    },
+                ]
             },
             {
                 path: "vehicules",
-                element: <ListeVehicules />,
+                children: [
+                    {
+                        path: "",
+                        element: <ListeVehicules />,
+                    },
+                    {
+                        path: "add",
+                        element: <AddVehicule />,
+                    },
+                    {
+                        path: ":id",
+                        element: <ViewVehicule />,
+                    },
+                    {
+                        path: ":id/edit",
+                        element: <EditVehicule />,
+                    },
+                ]
             },
             {
-                path: "cartegrise",
-                element: <ListeCartegrises />,
+                path: "cartesgrise",
+                children: [
+                    {
+                        path: "",
+                        element: <ListeCartegrises />,
+                    },
+                    {
+                        path: "add",
+                        element: <AddCartegrise />,
+                    },
+                    {
+                        path: ":id",
+                        element: <ViewCartegrise />,
+                    },
+                    {
+                        path: ":id/edit",
+                        element: <EditCartegrise />,
+                    },
+                ]
             },
         ],
     },

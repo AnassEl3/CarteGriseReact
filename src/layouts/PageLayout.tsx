@@ -6,7 +6,7 @@ const PageLayout = ({ children }: any) => {
     const pageLoadingHolder = useContext(PageLodaingContext);
 
     return (
-        <main className="relative overflow-hidden h-screen">
+        <main className="relative overflow-hidden">
             {/* Page loading spinner ... */}
             {pageLoadingHolder.pageLoading ? <SpinnerScreen /> : null}
 

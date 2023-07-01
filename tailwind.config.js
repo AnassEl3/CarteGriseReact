@@ -11,15 +11,16 @@ export default {
     safelist: [
         {
             pattern: /text-(xs|sm|md|lg|xl)/,
-            variants: ['hover', 'focus', 'dark'],
+            variants: ["hover", "focus", "dark"],
         },
         {
-            pattern: /bg-(primary|secondary|success|warning|danger)/,
-            variants: ['hover', 'focus', 'dark'],
+            pattern: /bg-(primary|secondary|success|info|warning|danger)/,
+            variants: ["hover", "focus", "dark"],
         },
         {
-            pattern: /bg-(primary|secondary|success|warning|danger)-(50|100|200|300|400|500|600|700|800|900|950)/,
-            variants: ['hover', 'focus', 'dark'],
+            pattern:
+                /bg-(primary|secondary|success|info|warning|danger)-(50|100|200|300|400|500|600|700|800|900|950)/,
+            variants: ["hover", "focus", "dark"],
         },
     ],
     theme: {
@@ -38,8 +39,8 @@ export default {
                     DEFAULT: colors.amber[300],
                 },
                 info: {
-                    ...colors.purple,
-                    DEFAULT: colors.purple[800],
+                    ...colors.blue,
+                    DEFAULT: colors.blue[800],
                 },
                 success: {
                     ...colors.green,
@@ -57,5 +58,5 @@ export default {
         },
     },
     darkMode: "class",
-    plugins: [require("preline/plugin")],
+    plugins: [require("@tailwindcss/forms"), require("preline/plugin")],
 };

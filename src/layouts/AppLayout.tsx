@@ -41,7 +41,7 @@ export default function AppLayout() {
         <div>
             <Sidebar />
             <Navbar />
-            <div className="w-full   lg:pl-64">
+            <div className="container mx-auto w-full lg:pl-64">
                 <Outlet />
             </div>
         </div>

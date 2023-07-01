@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
+import logo from '../assets/gestion de carte grisse.svg'
 
 const Sidebar = () => {
     type navLinkArgs = {
@@ -99,10 +100,11 @@ const Sidebar = () => {
             >
                 <div className="px-6">
                     <NavLink
-                        className="flex-none text-xl font-semibold dark:text-white"
-                        to="/"
+                        className="flex-none uppercase text-xl text-center font-semibold dark:text-white"
+                        to="/app"
                     >
-                        Carte grise
+                        <img className="w-32 m-auto" src={logo} alt="Logo gestion carte grise"/>
+                        <span className="text-center">Gestion carte grise</span>
                     </NavLink>
                 </div>
 
@@ -127,9 +129,9 @@ const Sidebar = () => {
                             className="hs-accordion"
                             id="administration-accordion"
                         >
-                            <a
-                                className="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white"
-                                href="javascript:;"
+                            <button
+                                className="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white w-full"
+                                
                             >
                                 <FontAwesomeIcon icon={faBuildingColumns} />
                                 Administration
@@ -141,7 +143,7 @@ const Sidebar = () => {
                                     icon={faAngleUp}
                                     className="hs-accordion-active:block ml-auto hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                                 />
-                            </a>
+                            </button>
 
                             <div
                                 id="administration-accordion-child"
@@ -186,9 +188,9 @@ const Sidebar = () => {
                         {/* --------------------------------------------------------- */}
 
                         <li className="hs-accordion" id="demandes-accordion">
-                            <a
-                                className="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white"
-                                href="javascript:;"
+                            <button
+                                className="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white w-full"
+                                
                             >
                                 <FontAwesomeIcon icon={faFileLines} />
                                 Demandes
@@ -200,7 +202,7 @@ const Sidebar = () => {
                                     icon={faAngleUp}
                                     className="hs-accordion-active:block ml-auto hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                                 />
-                            </a>
+                            </button>
 
                             <div
                                 id="demandes-accordion-child"
@@ -218,17 +220,6 @@ const Sidebar = () => {
                                     </li>
                                     <li>
                                         <NavLink
-                                            to="/app/documents"
-                                            className={navLinkStyling}
-                                        >
-                                            <FontAwesomeIcon
-                                                icon={faFolderOpen}
-                                            />
-                                            Documents
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink
                                             to="/app/citoyens"
                                             className={navLinkStyling}
                                         >
@@ -238,6 +229,17 @@ const Sidebar = () => {
                                             Citoyens
                                         </NavLink>
                                     </li>
+                                    <li>
+                                        <NavLink
+                                            to="/app/documents"
+                                            className={navLinkStyling}
+                                        >
+                                            <FontAwesomeIcon
+                                                icon={faFolderOpen}
+                                            />
+                                            Documents
+                                        </NavLink>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -245,9 +247,9 @@ const Sidebar = () => {
                         {/* --------------------------------------------------------- */}
 
                         <li className="hs-accordion" id="vehicule-accordion">
-                            <a
-                                className="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white"
-                                href="javascript:;"
+                            <button
+                                className="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white w-full"
+                                
                             >
                                 <FontAwesomeIcon icon={faCarRear} />
                                 Véhicules
@@ -259,7 +261,7 @@ const Sidebar = () => {
                                     icon={faAngleUp}
                                     className="hs-accordion-active:block ml-auto hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                                 />
-                            </a>
+                            </button>
 
                             <div
                                 id="vehicule-accordion-child"
@@ -279,7 +281,7 @@ const Sidebar = () => {
                                     </li>
                                     <li>
                                         <NavLink
-                                            to="/app/cartegrise"
+                                            to="/app/cartesgrise"
                                             className={navLinkStyling}
                                         >
                                             <FontAwesomeIcon
